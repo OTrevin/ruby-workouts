@@ -4,48 +4,57 @@ require 'pry-byebug'
 
 def get_first(arr)
   # Get the first element of the array
+  arr[0] # or arr.first
 end
 
 def get_last(arr)
   # Get the last element of the array
+  arr[-1] # or arr.last
 end
 
 def get_at_index(arr, index)
   # Fetch an element in the array at the specified index
+  arr[index]
 end
 
 def pop_first(arr)
   # Take the first element out of the array
+  arr.shift
 end
 
 def eliminate_repeat_values(arr)
   # Take the first element out of the array
+  arr.uniq
 end
 
 def merge_arrays(arr, other_arr)
   # merge two arrays together (ex.)
   # merge_arrays(["a", "b"], ["c", "d"])
   # => ["a", "b", "c", "d"]
+  arr + other_arr
 end
 
-# WORKOUT 🏋
+# WORKOUT
 
 def join_values(arr, other_arr)
   # gets all common values in two arrays (ex.)
   # join_values(["a", "b", "c"], ["c", "z", "y"])
   # => ["c"]
+  arr & other_arr
 end
 
 def excluded_values(arr, other_arr)
   # gets all non-shared values in two arrays (ex.)
   # merge_arrays(["a", "b", "c"], ["c", "z", "y"])
   # => ["a", "b", "z", "y"]
+  arr & other_arr
 end
 
 def subtraction(arr, other_arr)
   # take away values in arr that are also present in other arr (ex.)
   # subtraction(["a", "b", "c"], ["c", "z", "y"])
   # => ["a", "b"]
+  arr - other_arr
 end
 
 def all_even_at_start(arr)
@@ -54,6 +63,8 @@ def all_even_at_start(arr)
   # => [2,4,6,1,3,5]
   # all_even_at_start([1,2,2,2,3])
   # => [2,2,2,1,3]
+  arr.even?.sort
+  binding.pry
 end
 
 def acronym(arr)
@@ -63,6 +74,9 @@ def acronym(arr)
   # => "G.F."
   # acronym(["Cash", "Rules", "Everything", "Around", "Me"])
   # => "C.R.E.A.M."
+  arr.each do |each|
+    each[0][0]
+  end
 end
 
 def stop_sign(arr)
@@ -70,6 +84,3 @@ def stop_sign(arr)
   # stop_sign(["Hi", "my", "name", "is", "STOP", "Slim", "Shady"])
   # => ["Hi", "my", "name", "is"]
 end
-
-
-
